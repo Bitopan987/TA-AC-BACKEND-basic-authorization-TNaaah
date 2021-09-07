@@ -1,0 +1,259 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body a {
+  text-decoration: none;
+}
+
+body .container {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+body .container .title {
+  text-align: center;
+  padding: 2rem 0 3rem 0;
+}
+
+body header {
+  background-color: #f6f9fc;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: 1rem 0;
+}
+
+body header .logo {
+  color: #58a6ff;
+}
+
+body .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .form {
+  max-width: 30rem;
+  border: 2px solid #e4e0e0;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  text-align: center;
+  margin-top: 4rem;
+  border-radius: 7px;
+}
+
+body .form h2 {
+  color: #58a6ff;
+  font-size: 1.4rem;
+  padding: 1rem 0;
+}
+
+body .form .input_handle {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 2px solid #e4e0e0;
+  border-radius: 7px;
+  outline: none;
+}
+
+body .success {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+body .success h1 {
+  font-size: 2.5rem;
+  padding: 2rem 0;
+  color: #58a6ff;
+}
+
+body .success p {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #58a6ff;
+}
+
+body .text_error {
+  color: red;
+  text-align: left;
+  padding-left: 0.6rem;
+}
+
+body .home {
+  text-align: center;
+}
+
+body .list {
+  background-color: #eafcf1;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  max-width: 30rem;
+  margin-bottom: 0.7rem;
+  border-radius: 7px;
+  border: 2px solid #e4e0e0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .list_header {
+  text-align: center;
+  color: #58a6ff;
+  padding: 1rem 0;
+}
+
+body .list h3 {
+  color: #37b667;
+  padding-bottom: 0.5rem;
+}
+
+body .list p {
+  color: #3184e4;
+}
+
+body .article {
+  margin: 0 auto;
+  max-width: 30rem;
+  background-color: #eafcf1;
+  border: 2px solid #37b667;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-radius: 7px;
+}
+
+body .article h2 {
+  color: #58a6ff;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+body .article p {
+  font-size: 1.4rem;
+  padding: 0.3rem 0;
+}
+
+body .article .buttons {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+body .content h2 {
+  padding: 0.5rem 0;
+  color: #58a6ff;
+}
+
+body .content hr {
+  border: none;
+  border-top: 2px solid #f8f6f6;
+  margin-bottom: 1rem;
+}
+
+body .content p {
+  font-size: 1.4rem;
+  color: grey;
+  padding: 0.1rem 0;
+}
+
+body .content button {
+  margin: 0.5rem 0.5rem 1rem 0;
+}
+
+body .center {
+  text-align: center;
+  padding: 2rem;
+}
+
+body .username {
+  color: #3184e4;
+  padding-right: 1rem;
+  text-transform: capitalize;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #ec7373;
+  /* Red */
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: 0.7rem 1.2rem;
+  margin-right: 1rem;
+  border-radius: 7px;
+  font-size: 1.2rem;
+}
+
+.btn_primary {
+  background-color: #37b667;
+  color: aliceblue;
+}
+
+.btn_sub {
+  background-color: #58a6ff;
+  color: aliceblue;
+  margin-top: 0.5rem;
+}
+
+.btn_like {
+  background-color: #58a6ff;
+  color: aliceblue;
+}
+
+.btn_sec {
+  background-color: #37b667;
+  color: aliceblue;
+}
+
+.btn_ter {
+  background-color: red;
+  color: aliceblue;
+}
+/*# sourceMappingURL=style.css.map */

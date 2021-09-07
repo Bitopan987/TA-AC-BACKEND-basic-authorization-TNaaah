@@ -1,0 +1,17 @@
+<header>
+  <div class="container flex">
+    <a href="/users">
+      <h2 class="logo">Home</h2>
+    </a>
+    <div>
+      <% if(user){ %>
+      <a href="" class="username"><%= user.fullName %></a>
+      <a class="btn btn_primary" href="/articles/new">Add Article</a>
+      <a href="/users/logout" class="btn btn_primary">Logout</a>
+      <% } else { %>
+      <a class="btn btn_primary" href="/users/login">Login</a>
+      <a class="btn btn_primary" href="/users/register">Register</a>
+      <% } %>
+    </div>
+  </div>
+</header>
