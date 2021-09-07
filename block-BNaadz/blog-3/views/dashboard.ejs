@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <% include partials/header %>
+    <main>
+      <div class="container">
+        <section class="success">
+          <h1>Welcome <%= user.firstName + " " + user.lastName %></h1>
+          <a href="/articles" class="btn btn_primary"> View All Articles </a>
+          <a href="/users/logout" class="btn btn_primary">Logout</a>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

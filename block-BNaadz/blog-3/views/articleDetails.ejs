@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <% include partials/header %>
+    <div class="container">
+      <section class="article">
+        <h2><%= article.title %></h2>
+        <p>Name : <%= article.author.fullName %></p>
+        <div>
+         <p> Tags: <% article.tags.forEach( tag => { %>
+          <span class="border-2 p-2 mr-2 bg-gray-200"></span><%= tag %></span>
+          <% }) %>
+        </div>
+        <p>Des :<%= article.description %></p>
+        <p>Likes: <%= article.likes %></p>
+       <div class="buttons">
+        <a href="/articles/<%= article.slug %>/likes">
+            <button class="btn btn_like">Likes</button>
+          </a>
+          <a href="/articles/<%= article.slug %>/edit">
+            <button class="btn btn_sec">Edit</button>
+          </a>
+          <a href="/articles/<%= article.slug %>/delete">
+            <button class="btn btn_ter">Delete</button>
+          </a>
+       </div>
+      </section>
+
+      <div class="comment form">
+      <form action="/articles/<%= article._id %>/comments" method="POST">
+        <textarea
+          type="text"
+          rows="4"
+          name="content"
+          class="input_handle"
+          placeholder="Add Comments"
+        ></textarea>
+        <input type="submit" class="btn btn_sub" value="Add Comment" />
+      </form>
+    </div>
+      <div class="content">
+      <h2 class="text">Comments</h2>
+      <hr>
+      <% article.comments.forEach(comment => { %>
+            <p><%= comment.content %></p>
+            <p>Likes: <%= comment.likes %></p>
+            <hr>
+            <a href="/comments/<%= comment.id %>/like">
+              <button class="btn btn_like">Like 💖</button>
+          </a>
+            <a href="/comments/<%= comment.id %>/dislike">
+              <button class="btn btn_like">Dislike 👎</button>
+           </a> 
+            <a href="/comments/<%= comment._id %>/edit">
+              <button class="btn btn_sec">Edit</button>
+            </a>
+            <a href="/comments/<%= comment._id %>/delete">
+              <button class="btn btn_ter">Delete</button>
+            </a>
+      <% }) %>
+     </div>
+
+     <div class="center">
+      <a href="/users/logout" class="btn btn_primary" >Logout</a>
+     </div>
+    </div>
+  </body>
+</html>
