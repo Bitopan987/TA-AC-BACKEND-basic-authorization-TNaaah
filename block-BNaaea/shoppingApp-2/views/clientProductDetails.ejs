@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/7c7efbb78c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container flex">
+        <h2>
+          <a class="logo" href="/">LOGO</a>
+        </h2>
+        <nav class="btn-nav">
+          <% if(url == "/") { %>
+          <a class="btn_page active" href="/">Home</a>
+          <% } else { %>
+          <a class="btn_page" href="/">Home</a>
+          <% } %>
+          <a href="/client/product/list" class="btn_page">Product list</a>
+          <a href="/client/product/cart" class="btn_page">View cart</a>
+          <a href="/users/logout" class="btn_page">Logout</a>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <article class="product-details-card">
+        <div class="img-div">
+          <img src="<%= product.imageUrl %>" alt="product image" />
+        </div>
+        <div class="product-text">
+          <h2><%= product.name %></h2>
+          <h4 class="text-center mb-5">
+            Quantity remaining:-
+            <span class="color-pri"><%= product.quantity %></span>
+          </h4>
+          <h4 class="text-center mb-5">
+            Price :- <span class="color-pri"><%= product.price %></span>
+          </h4>
+          <h4 class="text-center mb-5">
+            Likes :- <span class="color-pri"> <%= product.likes %> </span>
+          </h4>
+        </div>
+      </article>
+      <div class="button_sec">
+        <a href="/client/product/<%= product.id  %>/like" class="btn_like"
+          ><img src="/images/like.png" alt=""
+        /></a>
+        <a href="/client/product/<%= product.id  %>/dislike" class="btn_dislike"
+          ><img src="/images/dislike.png" alt=""
+        /></a>
+      </div>
+      <div class="center">
+        <a
+          href="/client/product/<%= product.id %>/addToCart"
+          class="btn btn_primary"
+          >Add to cart</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('./include/header'); -%>
+    <div class="container">
+      <section class="user_home">
+        <h2>Welcome <span>User</span></h2>
+        <span class="text_error"><%= error %> </span>
+        <div>
+          <a href="/client/product/list" class="btn btn_primary"
+            >Start Shopping</a
+          >
+        </div>
+      </section>
+    </div>
+    <%- include('./include/footer'); -%>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container flex">
+        <h2>
+          <a class="logo" href="/">LOGO</a>
+        </h2>
+        <nav class="btn-nav">
+          <% if(url == "/") { %>
+          <a class="btn_page active" href="/">Home</a>
+          <% } else { %>
+          <a class="btn_page" href="/">Home</a>
+          <% } %>
+
+          <a href="/client/product/cart" class="btn_page">View cart</a>
+          <a class="btn_page" href="/users/logout">Logout</a>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <section class="admin_list">
+        <h3>All Products</h3>
+        <% products.forEach(ele=>{ %>
+        <article class="item-card">
+          <div class="img-div">
+            <img src="<%= ele.imageUrl  %>" alt="item img" />
+          </div>
+          <h4><%= ele.name %></h4>
+          <a
+            href="/client/product/<%= ele.id  %>/details"
+            class="btn btn_primary"
+            >Details</a
+          >
+        </article>
+        <% }) %>
+      </section>
+    </div>
+    <%- include('./include/footer'); -%>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('./include/header'); -%>
+    <div class="container">
+      <section class="form">
+        <h2>Registration</h2>
+        <% if(error){ %>
+        <p class="text_error"><%= error %></p>
+        <% } %>
+        <form action="/users/register" method="POST">
+          <input
+            type="text"
+            name="firstName"
+            placeholder="First Name"
+            class="input_handle"
+          />
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Last Name"
+            class="input_handle"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            class="input_handle"
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            class="input_handle"
+          />
+          <div>
+            <label for="isAdmin">Admin</label>
+            <input type="radio" name="isAdmin" id="isAdmin" value="admin" />
+          </div>
+          <div>
+            <label for="isAdmin2">User</label>
+            <input
+              type="radio"
+              name="isAdmin"
+              id="isAdmin2"
+              checked="true"
+              value="user"
+            />
+          </div>
+          <div class="center">
+            <button type="submit" class="btn btn_sub">Register</button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <%- include('./include/footer'); -%>
+  </body>
+</html>
