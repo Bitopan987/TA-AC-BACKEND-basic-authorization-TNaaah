@@ -30,8 +30,9 @@ body header {
   border-bottom: 1px solid #e7e5e5;
 }
 
-body header .logo {
-  color: #096ddc;
+body header .logo img {
+  width: 4rem;
+  height: 2rem;
 }
 
 body .container {
@@ -45,7 +46,7 @@ body a {
 }
 
 body .btn_page {
-  padding: 0.7rem 1.4rem;
+  padding: 1rem 1.4rem;
 }
 
 body .active {
@@ -154,7 +155,7 @@ body .text_error {
 }
 
 body .admin_home {
-  margin: 7rem auto;
+  margin: 7rem auto 0 auto;
   max-width: 50rem;
   text-align: center;
   padding-bottom: 4rem;
@@ -330,6 +331,50 @@ body .client hr {
   border: none;
   border-top: 2px solid #f3eded;
   margin: 1rem 0;
+}
+
+body .category {
+  background-color: white;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+body .category h2 {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+body .category .item {
+  display: block;
+  padding: 0.5rem 0;
+}
+
+body .list {
+  margin: 0 auto;
+  max-width: 50rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 2rem 0;
+  background-color: white;
+}
+
+body .list h2 {
+  padding: 0.7rem 0;
+}
+
+body .list li {
+  list-style-type: none;
+  padding: 0.1rem 0;
+  color: #096ddc;
+  font-size: 1.3rem;
+}
+
+body .list ul {
+  text-align: center;
 }
 
 .btn {

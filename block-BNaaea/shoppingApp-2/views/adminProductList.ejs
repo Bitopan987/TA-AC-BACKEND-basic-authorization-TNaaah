@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <header class="header">
+    <!-- <header class="header">
       <div class="container flex">
         <h2>
           <a class="logo" href="/">LOGO</a>
-        </h2>
+        </h2> 
         <nav class="btn-nav">
           <a class="btn_page active" href="/">Home</a>
 
@@ -23,7 +23,8 @@
           <a class="btn_page" href="/users/logout">Logout</a>
         </nav>
       </div>
-    </header>
+    </header> -->
+    <%- include('./include/header'); -%>
     <div class="container">
       <section class="admin_list">
         <h3>Product List</h3>
@@ -40,6 +41,12 @@
           >
         </article>
         <% }) %>
+      </section>
+
+      <section class="category">
+        <h2>Categories</h2>
+        <a href="/admin/product/list" class="btn btn_primary">All</a>
+        <a href="" class="item">elm</a>
       </section>
     </div>
     <%- include('./include/footer'); -%>

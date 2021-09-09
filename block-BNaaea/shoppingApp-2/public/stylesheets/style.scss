@@ -25,7 +25,10 @@ body {
     background-color: $white;
     border-bottom: 1px solid #e7e5e5;
     .logo {
-      color: $blue;
+      img {
+        width: 4rem;
+        height: 2rem;
+      }
     }
   }
   .container {
@@ -39,7 +42,7 @@ body {
   }
 
   .btn_page {
-    padding: 0.7rem 1.4rem;
+    padding: 1rem 1.4rem;
   }
   .active {
     border-bottom: 0.15rem solid $ternary;
@@ -126,7 +129,7 @@ body {
     padding-bottom: 0.5rem;
   }
   .admin_home {
-    margin: 7rem auto;
+    margin: 7rem auto 0 auto;
     max-width: 50rem;
     text-align: center;
     padding-bottom: 4rem;
@@ -258,6 +261,40 @@ body {
       border: none;
       border-top: 2px solid #f3eded;
       margin: 1rem 0;
+    }
+  }
+  .category {
+    background-color: $white;
+    text-align: center;
+    padding: 2rem 0;
+    h2 {
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+    .item {
+      display: block;
+      padding: 0.5rem 0;
+    }
+  }
+  .list {
+    margin: 0 auto;
+    max-width: 50rem;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem 0;
+    background-color: $white;
+
+    h2 {
+      padding: 0.7rem 0;
+    }
+    li {
+      list-style-type: none;
+      padding: 0.1rem 0;
+      color: $blue;
+      font-size: 1.3rem;
+    }
+    ul {
+      text-align: center;
     }
   }
 }

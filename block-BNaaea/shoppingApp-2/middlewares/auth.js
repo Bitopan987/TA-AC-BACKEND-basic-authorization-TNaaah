@@ -2,17 +2,25 @@ var User = require('../models/user');
 
 module.exports = {
   loggdInUser: (req, res, next) => {
-    if (req.user && req.session.userId) {
+    if (req.session && req.session.userId) {
       next();
     } else {
       req.flash('error', 'You must be logged-In to perform this action');
       res.redirect('/users/login');
     }
   },
-  UserInfo: (req, res, next) => {
-    if (req.session && req.session.userId) {
-      var userId = req.session.userId;
-      User.findById(userId, (err, user) => {
+  isAdmin: (req, res, next) => {
+    if (req.session && req.session.isAdmin === 'true') {
+      next();
+    } else {
+      res.redirect('/home');
+    }
+  },
+  userInfo: (req, res, next) => {
+    var userId = req.session && req.session.userId;
+    if (userId) {
+      User.findById(userId, 'fullName email', (err, user) => {
+        if (err) return next(err);
         req.user = user;
         res.locals.user = user;
         next();
@@ -26,13 +34,5 @@ module.exports = {
   urlInfo: (req, res, next) => {
     res.locals.url = req.url;
     next();
-  },
-  isAdmin: (req, res, next) => {
-    if (req.user.isAdmin === 'true' && req.session) {
-      next();
-    } else {
-      req.flash('error', 'you must login as admin');
-      res.redirect('/home');
-    }
   },
 };

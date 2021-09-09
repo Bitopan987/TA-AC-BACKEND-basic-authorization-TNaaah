@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <header class="header">
+    <!-- <header class="header">
       <div class="container flex">
         <h2>
           <a class="logo" href="/">LOGO</a>
@@ -20,7 +20,8 @@
           <a class="btn_page" href="/users/login">login</a>
         </nav>
       </div>
-    </header>
+    </header> -->
+    <%- include('./include/header'); -%>
     <div class="container admin_form">
       <h1>Add New Product</h1>
       <section class="form">
@@ -44,7 +45,12 @@
             name="price"
             class="input_handle"
           />
-
+          <input
+            type="text"
+            placeholder="Category"
+            name="category"
+            class="input_handle"
+          />
           <input
             type="text"
             placeholder="image url"
