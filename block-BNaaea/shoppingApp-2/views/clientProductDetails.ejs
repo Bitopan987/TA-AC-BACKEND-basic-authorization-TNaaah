@@ -15,11 +15,16 @@
     <header class="header">
       <div class="container flex">
         <h2>
-          <a class="logo" href="/">LOGO</a>
+          <a class="logo" href="/"><img src="/images/online.png" alt="" /></a>
         </h2>
         <nav class="btn-nav">
-          <a class="btn_page active" href="/">Home</a>
-          <a class="btn_page" href="/">Home</a>
+          <% if(url == "/home") { %>
+          <a class="btn_page active" href="/home">Home</a>
+          <% } else { %>
+          <a class="btn_page" href="/home">Home</a>
+          <% } %> <% if(user){ %>
+          <a href="" class="username"><%= user.fullName %></a>
+          <% } %>
           <a href="/client/product/list" class="btn_page">Product list</a>
           <a href="/client/product/cart" class="btn_page">View cart</a>
           <a href="/users/logout" class="btn_page">Logout</a>

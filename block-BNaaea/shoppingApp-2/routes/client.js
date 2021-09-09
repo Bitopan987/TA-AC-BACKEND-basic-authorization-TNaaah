@@ -5,7 +5,7 @@ var Product = require('../models/product');
 
 /* GET list . */
 router.get('/product/list', function (req, res, next) {
-  if (req.user.isAdmin === 'false' && req.session.userId) {
+  if (req.session.isAdmin === 'false' && req.session.userId) {
     Product.find({}, (err, products) => {
       res.render('clientProductList', { products });
     });
@@ -18,7 +18,7 @@ router.get('/product/list', function (req, res, next) {
 //get details
 
 router.get('/product/:id/details', (req, res, next) => {
-  if (req.user.isAdmin === 'false' && req.session.userId) {
+  if (req.session.isAdmin === 'false' && req.session.userId) {
     let productId = req.params.id;
     Product.findById(productId, (err, product) => {
       if (err) return next(err);
@@ -33,7 +33,7 @@ router.get('/product/:id/details', (req, res, next) => {
 //like handler
 
 router.get('/product/:id/like', (req, res, next) => {
-  if (req.user.isAdmin === 'false' && req.session.userId) {
+  if (req.session.isAdmin === 'false' && req.session.userId) {
     let productId = req.params.id;
     Product.findByIdAndUpdate(
       productId,
@@ -51,7 +51,7 @@ router.get('/product/:id/like', (req, res, next) => {
 });
 
 router.get('/product/:id/dislike', (req, res, next) => {
-  if (req.user.isAdmin === 'false' && req.session.userId) {
+  if (req.session.isAdmin === 'false' && req.session.userId) {
     let productId = req.params.id;
     Product.findByIdAndUpdate(
       productId,
@@ -71,7 +71,7 @@ router.get('/product/:id/dislike', (req, res, next) => {
 //adding item to cart
 
 router.get('/product/:id/addToCart', (req, res, next) => {
-  if (req.user.isAdmin === 'false' && req.session.userId) {
+  if (req.session.isAdmin === 'false' && req.session.userId) {
     let itemId = req.params.id;
     let userId = req.session.userId;
     User.findByIdAndUpdate(
@@ -91,7 +91,7 @@ router.get('/product/:id/addToCart', (req, res, next) => {
 //getting cart items
 
 router.get('/product/cart', (req, res, next) => {
-  if (req.user.isAdmin === 'false' && req.session.userId) {
+  if (req.session.isAdmin === 'false' && req.session.userId) {
     let userId = req.session.userId;
     User.findById(userId)
       .populate('cart')
@@ -112,7 +112,7 @@ router.get('/product/cart', (req, res, next) => {
 //removing item to cart
 
 router.get('/product/:id/removeFromCart', (req, res, next) => {
-  if (req.user.isAdmin === 'false' && req.session.userId) {
+  if (req.session.isAdmin === 'false' && req.session.userId) {
     let itemId = req.params.id;
     let userId = req.session.userId;
     User.findByIdAndUpdate(

@@ -50,7 +50,8 @@ app.use(
 
 app.use(flash());
 
-app.use(auth.UserInfo);
+app.use(auth.userInfo);
+app.use(auth.urlInfo);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

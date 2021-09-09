@@ -8,19 +8,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="container flex">
-        <h2>
-          <a class="logo" href="/">LOGO</a>
-        </h2>
-        <nav class="btn-nav">
-          <a class="btn_page active" href="/">Home</a>
-          <a class="btn_page" href="/">Home</a>
-          <a class="btn_page" href="/admin/product/new">Add new Product</a>
-          <a class="btn_page" href="/admin/product/list">Product List</a>
-        </nav>
-      </div>
-    </header>
+    <%- include('./include/header'); -%>
     <div class="container">
       <article class="product-details-card">
         <div class="img-div">

@@ -22,6 +22,32 @@
             >Add new Product</a
           >
         </div>
+        <div>
+          <a href="/admin/product/list/category" class="btn btn_primary">
+            List of categories
+          </a>
+        </div>
+      </section>
+
+      <section class="list">
+        <ul class="p-5 m-10">
+          <h2 class="text-xl font-medium text-yellow-700">
+            List of Registered Users
+          </h2>
+          <% users.forEach(user => { %>
+          <li><%= user.fullName %></li>
+          <% }) %>
+        </ul>
+        <ul class="p-5 m-10">
+          <h2 class="text-xl font-medium text-yellow-700">List of Products</h2>
+          <% products.forEach(product => { %>
+          <li>
+            <a href="/admin/product/details/<%= product.id  %>"
+              ><%= product.name %></a
+            >
+          </li>
+          <% }) %>
+        </ul>
       </section>
     </div>
     <%- include('./include/footer'); -%>

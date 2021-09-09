@@ -20,7 +20,6 @@ router.get('/register', function (req, res, next) {
 
 router.post('/register', (req, res, next) => {
   User.create(req.body, (err, user) => {
-    console.log(err, user);
     if (err) {
       if (err.name === 'ValidationError') {
         req.flash('error', err.message);
@@ -64,6 +63,7 @@ router.post('/login', (req, res, next) => {
       }
       // persist login user info
       req.session.userId = user.id;
+      req.session.isAdmin = user.isAdmin;
       res.redirect('/home');
     });
   });

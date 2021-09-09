@@ -11,13 +11,34 @@
     <header class="header">
       <div class="container flex">
         <h2>
-          <a class="logo" href="/">LOGO</a>
+          <a class="logo" href="/"><img src="/images/online.png" alt="" /></a>
         </h2>
         <nav class="btn-nav">
-          <a class="btn_page active" href="/">Home</a>
-          <a class="btn_page" href="/users/login">login</a>
-          <a class="btn_page" href="/users/register">Register</a>
+          <% if(url == "/home") { %>
+          <a class="btn_page active" href="/home">Home</a>
+          <% } else { %>
+          <a class="btn_page" href="/home">Home</a>
+          <% } %> <% if (user) { %>
+          <a href="" class="username"><%= user.fullName %></a>
+          <% if (url == "/admin/product/new") { %>
+          <a class="btn_page active" href="/admin/product/new">Add Product</a>
+          <% } else { %>
+          <a class="btn_page" href="/admin/product/new">Add Product</a>
+          <% } %> <% if (url == "/admin/product/list") { %>
+          <a class="btn_page active" href="/admin/product/list">Product List</a>
+          <% } else { %>
+          <a class="btn_page" href="/admin/product/list"> Product List</a>
+          <% } %>
           <a class="btn_page" href="/users/logout">Logout</a>
+          <% }else{ %> <% if(url == "/users/login") { %>
+          <a class="btn_page active" href="/users/login">login</a>
+          <% } else { %>
+          <a class="btn_page" href="/users/login">login</a>
+          <% } %> <% if(url == "/users/register") { %>
+          <a class="btn_page active" href="/users/register">Register</a>
+          <% } else { %>
+          <a class="btn_page" href="/users/register">Register</a>
+          <% } %> <% } %>
         </nav>
       </div>
     </header>

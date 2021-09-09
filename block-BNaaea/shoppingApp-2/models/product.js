@@ -9,6 +9,7 @@ var productSchema = new Schema({
   price: { type: Number, required: true },
   imageUrl: { type: String },
   likes: { types: Number, default: 0 },
+  category: { type: String },
   // comments: [{ type: String }],
   createdBy: { type: Schema.Types.ObjectId, ref: 'User' },
 });
