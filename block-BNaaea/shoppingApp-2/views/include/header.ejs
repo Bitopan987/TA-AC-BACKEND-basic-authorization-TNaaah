@@ -14,17 +14,10 @@
           <a class="logo" href="/">LOGO</a>
         </h2>
         <nav class="btn-nav">
-          <% if(url == "/") { %>
           <a class="btn_page active" href="/">Home</a>
-          <% } else { %>
-          <a class="btn_page" href="/">Home</a>
-          <% } %>
           <a class="btn_page" href="/users/login">login</a>
           <a class="btn_page" href="/users/register">Register</a>
-
-          <% if (user) { %>
           <a class="btn_page" href="/users/logout">Logout</a>
-          <% } %>
         </nav>
       </div>
     </header>

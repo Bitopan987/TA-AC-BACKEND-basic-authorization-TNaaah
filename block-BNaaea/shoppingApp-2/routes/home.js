@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var auth = require('../middlewares/auth');
 
-/* GET home page. */
+/*GET home page.*/
+
 router.get('/', function (req, res, next) {
   console.log(req.user);
   if (req.user.isAdmin === 'true' && req.user) {
