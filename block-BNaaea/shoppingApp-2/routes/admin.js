@@ -31,18 +31,18 @@ router.post('/product/new', function (req, res, next) {
   }
 });
 
-router.get('/product/list', (req, res, next) => {
-  if (req.session.isAdmin === 'true' && req.session.userId) {
-    Product.find({}, (err, products) => {
-      if (err) return next(err);
+// router.get('/product/list', (req, res, next) => {
+//   if (req.session.isAdmin === 'true' && req.session.userId) {
+//     Product.find({}, (err, products) => {
+//       if (err) return next(err);
 
-      res.render('adminProductList', { products });
-    });
-  } else {
-    req.flash('error', 'you must login as admin');
-    return res.redirect('/home');
-  }
-});
+//       res.render('adminProductList', { products });
+//     });
+//   } else {
+//     req.flash('error', 'you must login as admin');
+//     return res.redirect('/home');
+//   }
+// });
 
 router.get('/product/list', (req, res, next) => {
   if (req.session.isAdmin === 'true' && req.session.userId) {
@@ -57,6 +57,7 @@ router.get('/product/list', (req, res, next) => {
         }
       });
       let arr = _.uniq(_.flattenDeep(arrOfcategory));
+      console.log(products, arr);
       res.render('adminProductList', { products, arr });
     });
   } else {

@@ -334,9 +334,12 @@ body .client hr {
 }
 
 body .category {
-  background-color: white;
   text-align: center;
   padding: 2rem 0;
+}
+
+body .category .btn {
+  margin-right: 0.4rem;
 }
 
 body .category h2 {
@@ -360,21 +363,25 @@ body .list {
           justify-content: space-evenly;
   padding: 2rem 0;
   background-color: white;
+  border-radius: 7px;
+  margin-bottom: 3rem;
 }
 
 body .list h2 {
-  padding: 0.7rem 0;
+  padding: 0.4rem 0;
+  color: #6e6d6d;
+  font-size: 1.3rem;
+  text-decoration: underline;
+  -webkit-text-decoration-line: #6e6d6d;
+          text-decoration-line: #6e6d6d;
 }
 
 body .list li {
   list-style-type: none;
   padding: 0.1rem 0;
   color: #096ddc;
-  font-size: 1.3rem;
-}
-
-body .list ul {
-  text-align: center;
+  font-size: 1rem;
+  text-transform: capitalize;
 }
 
 .btn {

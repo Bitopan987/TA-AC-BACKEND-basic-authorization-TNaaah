@@ -264,9 +264,11 @@ body {
     }
   }
   .category {
-    background-color: $white;
     text-align: center;
     padding: 2rem 0;
+    .btn {
+      margin-right: 0.4rem;
+    }
     h2 {
       text-align: center;
       padding-bottom: 1rem;
@@ -283,18 +285,21 @@ body {
     justify-content: space-evenly;
     padding: 2rem 0;
     background-color: $white;
-
+    border-radius: 7px;
+    margin-bottom: 3rem;
     h2 {
-      padding: 0.7rem 0;
+      padding: 0.4rem 0;
+      color: #6e6d6d;
+      font-size: 1.3rem;
+      text-decoration: underline;
+      text-decoration-line: #6e6d6d;
     }
     li {
       list-style-type: none;
       padding: 0.1rem 0;
       color: $blue;
-      font-size: 1.3rem;
-    }
-    ul {
-      text-align: center;
+      font-size: 1rem;
+      text-transform: capitalize;
     }
   }
 }
