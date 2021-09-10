@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <!-- <header class="header">
+      <div class="container flex">
+        <h2>
+          <a class="logo" href="/">LOGO</a>
+        </h2>
+        <nav class="btn-nav">
+          <a class="btn_page active" href="/">Home</a>
+          <a class="btn_page" href="/">Home</a>
+          <a class="btn_page" href="/admin/product/new">Add new product</a>
+          <a href="/admin/product/list" class="btn_page">product list</a>
+          <a href="/users/logout" class="btn_page">Logout</a>
+          <a href="/admin/product/details/<%= product.id  %>" class="btn_page"
+            >Back</a
+          >
+        </nav>
+      </div>
+    </header> -->
+    <%- include('./include/header'); -%>
+    <div class="container admin_form">
+      <h1>Product Edit Page</h1>
+      <section class="form">
+        <h2>Edit Product Details</h2>
+        <form action="/admin/product/<%= product.id  %>/edit" method="POST">
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            class="input_handle"
+            value="<%= product.name %>"
+          />
+          <input
+            type="number"
+            name="quantity"
+            placeholder="Quantity"
+            class="input_handle"
+            value="<%= product.quantity %>"
+          />
+          <input
+            type="number"
+            placeholder="Price"
+            name="price"
+            class="input_handle"
+            value="<%= product.price %>"
+          />
+
+          <input
+            type="text"
+            placeholder="Category"
+            name="category"
+            class="input_handle"
+            value="<%= product.category %>"
+          />
+
+          <input
+            type="text"
+            placeholder="image url"
+            name="imageUrl"
+            class="input_handle"
+            value="<%= product.imageUrl %>"
+          />
+          <div class="center">
+            <button type="submit" class="btn btn_sub">Submit</button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <%- include('./include/footer'); -%>
+  </body>
+</html>

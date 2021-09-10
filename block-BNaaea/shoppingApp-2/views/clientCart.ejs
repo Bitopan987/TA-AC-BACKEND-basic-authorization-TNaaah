@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container flex">
+        <h2>
+          <a class="logo" href="/"><img src="/images/online.png" alt="" /></a>
+        </h2>
+        <nav class="btn-nav">
+          <% if(url == "/home") { %>
+          <a class="btn_page active" href="/home">Home</a>
+          <% } else { %>
+          <a class="btn_page" href="/home">Home</a>
+          <% } %> <% if(user){ %>
+          <a href="" class="username"><%= user.fullName %></a>
+          <% } %>
+          <a href="/client/product/list" class="btn_page">Keep Shopping</a>
+          <a class="btn_page" href="/users/logout">Logout</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <section class="client">
+        <% user.cart.forEach(ele=>{ %>
+        <article class="client_content">
+          <div class="btn-div">
+            <h3><%= ele.name %></h3>
+            <h4 class="color-pri">Rs. <%= ele.price %></h4>
+          </div>
+          <div>
+            <a
+              href="/client/product/<%= ele.id  %>/removeFromCart"
+              class="btn_remove"
+              ><img src="/images/minus.png" alt=""
+            /></a>
+          </div>
+        </article>
+        <hr />
+        <% }) %>
+
+        <article class="cart_card flex jsb">
+          <h3>Total</h3>
+          <div class="btn-div">
+            <h4>Rs. <%= total %></h4>
+          </div>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>
