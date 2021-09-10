@@ -26,8 +26,17 @@
     </header> -->
     <%- include('./include/header'); -%>
     <div class="container">
+      <section class="category">
+        <h2>Categories :</h2>
+        <a href="/admin/product/list" class="btn btn_primary">All</a>
+        <!-- <a href="" class="item">elm</a> -->
+        <% arr.forEach(ele=>{ %>
+        <a href="/admin/product/list/<%=ele  %>" class="btn btn_primary">
+          <%= ele%>
+        </a>
+        <% }) %>
+      </section>
       <section class="admin_list">
-        <h3>Product List</h3>
         <% products.forEach(ele=>{ %>
         <article class="item-card">
           <div class="img-div">
@@ -41,12 +50,6 @@
           >
         </article>
         <% }) %>
-      </section>
-
-      <section class="category">
-        <h2>Categories</h2>
-        <a href="/admin/product/list" class="btn btn_primary">All</a>
-        <a href="" class="item">elm</a>
       </section>
     </div>
     <%- include('./include/footer'); -%>
