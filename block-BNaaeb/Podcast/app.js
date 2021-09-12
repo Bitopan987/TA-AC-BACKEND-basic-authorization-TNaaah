@@ -12,10 +12,11 @@ require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-// var adminRouter = require('./routes/admin');
-// var clientRouter = require('./routes/client');
+var adminRouter = require('./routes/admin');
+var clientRouter = require('./routes/client');
 var homeRouter = require('./routes/home');
-// var auth = require('./middlewares/auth');
+var podcastRouter = require('./routes/podcast');
+var auth = require('./middlewares/auth');
 
 // Connect with database
 mongoose.connect(
@@ -50,15 +51,15 @@ app.use(
 
 app.use(flash());
 
-// app.use(auth.userInfo);
+app.use(auth.userInfo);
 // app.use(auth.urlInfo);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/home', homeRouter);
-// app.use('/client', clientRouter);
-// app.use(auth.isAdmin);
-// app.use('/admin', adminRouter);
+app.use('/client', clientRouter);
+app.use('/admin', adminRouter);
+app.use('/podcast', podcastRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
