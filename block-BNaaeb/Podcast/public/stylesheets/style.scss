@@ -9,7 +9,7 @@
 $primary: #f6f8fa;
 $white: #fff;
 $secondary: #4ec2fb;
-$text: #5a2f4f;
+$text: #696468;
 $ternary: rgb(16, 105, 218);
 $cream: rgb(255, 248, 197);
 
@@ -22,6 +22,7 @@ body {
   }
   header {
     background-color: $primary;
+    box-shadow: 2px 0 3px 3px #e6e2e2;
   }
   .header {
     display: flex;
@@ -102,6 +103,130 @@ body {
       }
     }
   }
+  .client_sec {
+    padding: 5rem 0;
+    p {
+      text-align: center;
+      font-size: 1.5rem;
+      padding-bottom: 3rem;
+      span {
+        color: $secondary;
+      }
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      padding-bottom: 4rem;
+      color: $text;
+    }
+  }
+  .button_sec {
+    text-align: center;
+    padding-bottom: 4rem;
+    .btn {
+      margin-right: 0.5rem;
+    }
+  }
+  .user_sec {
+    text-align: center;
+    padding: 4rem 0 0 0;
+    p {
+      font-size: 1.4rem;
+    }
+    span {
+      color: $secondary;
+    }
+  }
+  .podcast {
+    padding: 3rem 0;
+    h2 {
+      text-align: center;
+      font-weight: 200;
+      padding-bottom: 1.5rem;
+    }
+    span {
+      color: $secondary;
+    }
+    .btn_div {
+      text-align: center;
+      margin-bottom: 2rem;
+      .btn {
+        margin-right: 1rem;
+      }
+    }
+    &_content {
+      margin: 0 auto;
+      max-width: 50rem;
+      article {
+        background-color: $primary;
+        margin-bottom: 1rem;
+        padding: 0.7rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 2px 2px 2px 0 #f1efef;
+        border-radius: 6px;
+        img {
+          width: 15rem;
+          height: 10rem;
+          border-radius: 7px;
+        }
+        h4 {
+          color: #72746f;
+          font-size: 1.4rem;
+          font-weight: 200;
+        }
+      }
+    }
+  }
+
+  .podcast_user {
+    text-align: center;
+    padding: 3rem 0;
+    span {
+      color: $secondary;
+    }
+    h1 {
+      font-weight: 200;
+      font-size: 2rem;
+    }
+    h2 {
+      font-weight: 400;
+      font-size: 2rem;
+      padding: 2rem 0;
+    }
+  }
+  .podcast_card {
+    text-align: center;
+    background-color: $cream;
+    box-shadow: 2px 2px 2px 0 #f1efef;
+    border-radius: 6px;
+    padding: 1.5rem 0;
+    max-width: 35rem;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    img {
+      height: 20rem;
+      width: 30rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+    }
+    h4 {
+      padding: 0.3rem 0;
+      font-size: 1.3rem;
+      font-weight: 200;
+    }
+    span {
+      color: $secondary;
+    }
+    .btn {
+      padding: 0.5rem 1.2rem;
+      margin-left: 0.5rem;
+    }
+    .btn_div {
+      padding: 0.5rem 0;
+    }
+  }
 }
 
 a {
@@ -111,8 +236,47 @@ a {
 .btn {
   padding: 0.5rem 1.2rem;
   border-radius: 7px;
-  display: inline;
+  display: inline-block;
   border: none;
   outline: none;
-  border: 1px solid #a7a4a4;
+  &_nav {
+    border: 1px solid #a7a4a4;
+    &:hover {
+      background-color: #f7f1f1;
+    }
+  }
+  &_primary {
+    background-color: $secondary;
+    padding: 0.7rem 1.2rem;
+    color: $white;
+    font-size: 1rem;
+    border: none;
+    &:hover {
+      background-color: #43b8f3;
+    }
+  }
+  &_sub {
+    border: 1px solid #8a8686;
+    &:hover {
+      background-color: #f7f1f1;
+    }
+  }
+  &_edit {
+    border: 1px solid $secondary;
+    color: $secondary;
+    &:hover {
+      background-color: $secondary;
+      transition: all 1s;
+      color: $white;
+    }
+  }
+  &_delete {
+    border: 1px solid red;
+    color: red;
+    &:hover {
+      background-color: red;
+      transition: all 1s;
+      color: $white;
+    }
+  }
 }

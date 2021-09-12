@@ -59,7 +59,7 @@ router.post('/login', (req, res, next) => {
       }
       // persist login user info
       req.session.userId = user.id;
-      req.session.isAdmin = user.isAdmin;
+      req.session.userType = user.userType;
       res.redirect('/home');
     });
   });
@@ -68,9 +68,14 @@ router.post('/login', (req, res, next) => {
 // Logout
 
 router.get('/logout', (req, res, next) => {
-  req.session.destroy();
-  res.clearCookie('connect.sid');
-  res.redirect('/users/login');
+  if (!req.session) {
+    req.flash('error', 'You must login first');
+    res.redirect('/users/login');
+  } else {
+    req.session.destroy();
+    res.clearCookie('connect.sid');
+    res.redirect('/users/login');
+  }
 });
 
 module.exports = router;
