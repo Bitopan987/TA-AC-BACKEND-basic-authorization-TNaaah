@@ -40,13 +40,17 @@ body .header .logo {
   color: #1069da;
 }
 
-body .header .nav_bar a {
+body .header .nav_bar .btn_nav {
   color: #696468;
   font-size: 1rem;
   margin-right: 0.8rem;
   border: 1px solid grey;
   padding: 0.5rem 1.2rem;
   border-radius: 7px;
+}
+
+body .header .nav_bar .user {
+  margin-right: 1rem;
 }
 
 body .title {
@@ -179,6 +183,8 @@ body .user_sec span {
 
 body .podcast {
   padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
 }
 
 body .podcast h2 {
@@ -233,6 +239,26 @@ body .podcast_content article h4 {
   color: #72746f;
   font-size: 1.4rem;
   font-weight: 200;
+}
+
+body .podcast .verify {
+  position: absolute;
+  top: 0.9rem;
+  right: -1.8rem;
+  background-color: #4ec2fb;
+  padding: 0.5rem 1.4rem;
+  border-radius: 7px;
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+}
+
+body .podcast .verify h4 {
+  color: #fff;
+  font-size: 1rem;
+}
+
+body .podcast .verify span {
+  color: #fff;
 }
 
 body .podcast_user {

@@ -6,7 +6,6 @@ var Podcast = require('../models/Podcast');
 var router = express.Router();
 
 /* GET home page. */
-
 router.get('/', function (req, res, next) {
   res.render('adminHomePage');
 });
@@ -40,6 +39,37 @@ router.get('/listOfPodcast/myOwn', auth.isAdmin, (req, res, next) => {
   Podcast.find({ createdBy: req.user.id }, (err, podcasts) => {
     if (err) return next(err);
     res.render('adminPodcastList', { podcasts });
+  });
+});
+
+//podcast verification
+router.get('/listOfPodcast/verification', auth.isAdmin, (req, res, next) => {
+  Podcast.find({ verified: 'false' }, (err, podcasts) => {
+    if (err) return next(err);
+    res.render('adminPodcastList', { podcasts });
+  });
+});
+
+//podcast details page
+
+router.get('/podcast/:id', auth.isAdmin, (req, res, next) => {
+  let podcastId = req.params.id;
+  Podcast.findById(podcastId)
+    .populate('createdBy')
+    .exec((err, podcast) => {
+      if (err) return next(err);
+      // console.log(podcast);
+      res.render('adminPodcastDetails', { podcast });
+    });
+});
+
+//verify podcast created by client
+
+router.get('/podcast/:id/verify', auth.isAdmin, (req, res, next) => {
+  let podcastId = req.params.id;
+  Podcast.findByIdAndUpdate(podcastId, { verified: true }, (err, updated) => {
+    if (err) return next(err);
+    res.redirect('/admin/listOfPodcast');
   });
 });
 
