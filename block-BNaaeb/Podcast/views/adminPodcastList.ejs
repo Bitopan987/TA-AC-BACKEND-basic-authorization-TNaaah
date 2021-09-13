@@ -27,7 +27,7 @@
           <% podcasts.forEach(podcast=>{ %>
           <article class="podcast flex jsb card">
             <div class="img-div">
-              <img
+               <img
                 class="flexi-img"
                 src="<%= podcast.image  %>"
                 alt="podcast img"
@@ -38,19 +38,18 @@
                 Title:- <span class="color-pri"> <%= podcast.name %></span>
               </h4>
             </div>
-
-            <div class="flex center">
-              <h4>
-                verified:-
-                <span class="color-pri"> <%= podcast.verified %></span>
-              </h4>
-            </div>
             <div class="flex center">
               <a
                 href="/admin/podcast/<%= podcast.id  %>"
                 class="btn btn_primary"
                 >More Details</a
               >
+            </div>
+            <div class="flex verify">
+              <h4 class="">
+                verified:-
+                <span class="color-pri"> <%= podcast.verified %></span>
+              </h4>
             </div>
           </article>
           <% }) %>

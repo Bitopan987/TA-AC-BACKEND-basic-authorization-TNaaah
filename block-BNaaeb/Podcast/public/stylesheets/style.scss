@@ -33,13 +33,16 @@ body {
       color: $ternary;
     }
     .nav_bar {
-      a {
+      .btn_nav {
         color: $text;
         font-size: 1rem;
         margin-right: 0.8rem;
         border: 1px solid grey;
         padding: 0.5rem 1.2rem;
         border-radius: 7px;
+      }
+      .user {
+        margin-right: 1rem;
       }
     }
   }
@@ -139,6 +142,8 @@ body {
   }
   .podcast {
     padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
     h2 {
       text-align: center;
       font-weight: 200;
@@ -176,6 +181,23 @@ body {
           font-size: 1.4rem;
           font-weight: 200;
         }
+      }
+    }
+    .verify {
+      position: absolute;
+      top: 0.9rem;
+      right: -1.8rem;
+      background-color: $secondary;
+      padding: 0.5rem 1.4rem;
+      border-radius: 7px;
+      transform: rotate(35deg);
+
+      h4 {
+        color: $white;
+        font-size: 1rem;
+      }
+      span {
+        color: $white;
       }
     }
   }
